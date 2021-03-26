@@ -1,16 +1,24 @@
 import psycopg2
-from config import config
+from . import config
 
 
 def create_tables():
     """ create tables in the PostgreSQL database"""
     commands = (
         """
-        CREATE TABLE vendors (
-            vendor_id SERIAL PRIMARY KEY,
-            vendor_name VARCHAR(255) NOT NULL
+        CREATE TABLE dados (
+            id SERIAL PRIMARY KEY,
+            data DATE NOT NULL ,
+            vacinado DECIMAL(10) NOT NULL,
+            vacinado2 DECIMAL(10) NOT NULL,
+            confirmado DECIMAL(10) NOT NULL,
+            recuperado DECIMAL(10) NOT NULL,
+            ativo DECIMAL(10) NOT NULL,
+            obito DECIMAL(10) NOT NULL,
+            enfermaria DECIMAL(5,2) NOT NULL,
+            uti DECIMAL(5,2) NOT NULL
         )
-        """,
+        """,)
     conn = None
     try:
         # read the connection parameters
@@ -19,7 +27,9 @@ def create_tables():
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
         # create table one by one
+        
         for command in commands:
+            
             cur.execute(command)
         # close communication with the PostgreSQL database server
         cur.close()
