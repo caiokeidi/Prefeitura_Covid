@@ -802,3 +802,34 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1616776500676	geckodriver	INFO	Listening on 127.0.0.1:55020
+1616776503931	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\caiok\\AppData\\Local\\Temp\\rust_mozprofileV57Ogx"
+JavaScript error: 42zknuirkw4.cfg, line 2: ReferenceError: Components is not defined
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1616776507005	Marionette	INFO	Listening on port 55045
+1616776507140	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 23732, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1616776514982	Marionette	INFO	Stopped listening on port 55045
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1616781014507	geckodriver	INFO	Listening on 127.0.0.1:58077
+1616781017573	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\caiok\\AppData\\Local\\Temp\\rust_mozprofile7ZZKvV"
+JavaScript error: 42zknuirkw4.cfg, line 2: ReferenceError: Components is not defined
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1616781019955	Marionette	INFO	Listening on port 58105
+1616781020244	Marionette	WARN	TLS certificate errors will be ignored for this session
+1616781034853	Marionette	INFO	Stopped listening on port 58105
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

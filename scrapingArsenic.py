@@ -1,3 +1,5 @@
+import urllib.request
+from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 from db_files import insert_dados

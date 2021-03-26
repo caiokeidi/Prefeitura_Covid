@@ -1,19 +1,30 @@
+import urllib.request
+from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 from db_files import insert_dados
 import re
 import datetime
+from selenium.webdriver.chrome.options import Options
 
 dict_prefeitura = {}
 urlpage = 'https://www.mogidascruzes.sp.gov.br/'
-driver = webdriver.Firefox()
+
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--disable-features=NetworkService")
+driver = webdriver.Chrome(chrome_options=chrome_options, executable_path="D:\Caiokeidi\Programming\chromedriver_win32/chromedriver.exe")
 
 def main():
     driver.get(urlpage)
     time.sleep(10)
     
     Busca()
-    insert_dados(dict_prefeitura)
+    #insert_dados(dict_prefeitura)
+    print(dict_prefeitura)
     driver.quit()
     
 
