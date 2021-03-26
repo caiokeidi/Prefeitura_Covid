@@ -5,29 +5,31 @@ import time
 from db_files import insert_dados
 import re
 import datetime
+import asyncio
+#import pandas as pd
 
 dict_prefeitura = {}
 urlpage = 'https://www.mogidascruzes.sp.gov.br/'
 driver = webdriver.Firefox()
 
-def main():
+async def main():
     driver.get(urlpage)
-    time.sleep(10)
+    await asyncio.sleep(10)
     
-    Busca()
-    insert_dados(dict_prefeitura)
+    await Busca()
+    #insert_dados(dict_prefeitura)
     driver.quit()
     
 
-def Busca():
+async def Busca():
     ids = ['data', 'vacinado', 'vacinado2', 'confirmado', 'recuperado', 'ativo', 'obito', 'enfermaria', 'uti']
     for id in ids:
-        result = find_by_id(id, driver)
+        result = await find_by_id(id, driver)
         dict_prefeitura[id] = result[0].text
     
     formatar_dict(dict_prefeitura)
 
-def find_by_id(id, driver):
+async def find_by_id(id, driver):
     results =  driver.find_elements_by_id(id) 
     return results
     
@@ -57,7 +59,7 @@ def formatar_dict(dict):
 if __name__ == "__main__":
     start_time = datetime.datetime.now()
 
-    main()
+    asyncio.run(main())
 
     end_time = datetime.datetime.now()
     time = end_time - start_time
